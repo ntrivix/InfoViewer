@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="drzavljani" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8745766f-f486-4ce6-86b1-2d5bf3b18c88">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="DR_OZNAKA" class="java.lang.String">
+		<defaultValueExpression><![CDATA["%"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TO_PERIOD_OD" class="java.lang.String">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TO_PERIOD_DO" class="java.lang.String">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[EXEC drzavljani $P{DR_OZNAKA},$P{TO_PERIOD_OD} ,$P{TO_PERIOD_DO}]]>
+	</queryString>
+	<field name="ID_OSOBE" class="java.lang.Integer"/>
+	<field name="DR_OZNAKA" class="java.lang.String"/>
+	<field name="NM_OZNAKA" class="java.lang.Integer"/>
+	<field name="IME" class="java.lang.String"/>
+	<field name="PREZIME" class="java.lang.String"/>
+	<field name="DATUM_RODJENJA" class="java.sql.Timestamp"/>
+	<field name="POL" class="java.lang.String"/>
+	<field name="TO_PERIOD_OD" class="java.sql.Timestamp"/>
+	<field name="TO_PERIOD_DO" class="java.sql.Timestamp"/>
+	<field name="DRZ_DR_OZNAKA" class="java.lang.String"/>
+	<field name="DU_OZNAKA" class="java.lang.String"/>
+	<field name="DR_NAZIV" class="java.lang.String"/>
+	<field name="DRZ_DRZ" class="java.lang.String"/>
+	<group name="Drzava" isReprintHeaderOnEachPage="true">
+		<groupExpression><![CDATA[$F{DRZ_DRZ}]]></groupExpression>
+		<groupHeader>
+			<band height="51">
+				<textField>
+					<reportElement mode="Opaque" x="0" y="11" width="555" height="20" backcolor="#B7ECBC" uuid="54eff947-3455-4af8-ad9e-50fda38995bd"/>
+					<box>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{DR_NAZIV}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="31" width="100" height="20" backcolor="#EEF5EF" uuid="08ce624b-9e87-4eef-8cc8-875ffd601321"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Ime]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="100" y="31" width="100" height="20" backcolor="#EEF5EF" uuid="803f301e-f1d5-4ab0-a436-1c69ed127623"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Prezime]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="200" y="31" width="52" height="20" backcolor="#EEF5EF" uuid="bb82ff3d-5be6-4013-afdc-790ad16c79a3"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Pol]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="252" y="31" width="100" height="20" backcolor="#EEF5EF" uuid="1dbb1ea9-e20c-47aa-a4cd-2397a935e49d"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Datum rođenja]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="352" y="31" width="100" height="20" backcolor="#EEF5EF" uuid="c8412311-da8f-4217-b8db-2e9b1d153fe6"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[datum dobijanja]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="452" y="31" width="103" height="20" backcolor="#EEF5EF" uuid="36b35ea9-7f57-4452-ab23-8149db2b0c14"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[datum isteka]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="52" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="555" height="52" uuid="f8b837ee-7ff9-41be-87f5-8a82fb85cf3b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Državljanstva"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="52" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="555" height="18" uuid="498fdeaa-1965-46a5-b55c-c36c9eb5f940"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($P{DR_OZNAKA}).equals("%")) ? "Spisak džavljana zemalja" : "Spisak državljana "+$F{DR_NAZIV}+"/e"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="18" width="555" height="20" uuid="1532d7a5-b99d-46b2-ada6-f451078ba52f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[(!($P{TO_PERIOD_DO}).equals("") && !($P{TO_PERIOD_OD}).equals("")) ? $P{TO_PERIOD_OD}+"-"+$P{TO_PERIOD_DO} : ((!($P{TO_PERIOD_DO}).equals("")) ? "Period do "+$P{TO_PERIOD_DO} : "")]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="20">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="26803448-49c8-446a-93d7-ea3031716e90"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{IME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20" uuid="9e82a68b-c4a5-4095-b4d6-609552a8a5bf"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{PREZIME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="52" height="20" uuid="206ae196-bd0b-425d-aaf8-ac3561bb1402"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{POL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="252" y="0" width="100" height="20" uuid="afed072f-eeda-448d-a267-7ed6697c9860"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{DATUM_RODJENJA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="352" y="0" width="100" height="20" uuid="4058647e-a545-4d0f-b295-37b3e9959efa"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{TO_PERIOD_OD}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="452" y="0" width="103" height="20" uuid="782eeffc-e076-42e1-b50b-faf82e901bfb"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{TO_PERIOD_DO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="435" y="34" width="80" height="20" uuid="32a5d57f-729d-4390-ba6c-3d5363b8c478"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="34" width="40" height="20" uuid="27965b1c-f8dd-4575-ae8b-97ed70694225"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd.MM.yyyy HH:mm:ss">
+				<reportElement x="0" y="34" width="100" height="20" uuid="f6385f9f-1ece-4d32-b1bd-50f00bd04149"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

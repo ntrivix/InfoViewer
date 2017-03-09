@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report3" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="325e7a50-1459-4ec5-af68-f8993cabc02f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="DR_OZNAKA" class="java.lang.String">
+		<defaultValueExpression><![CDATA["%"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[EXEC naseljena_mesta $P{DR_OZNAKA}]]>
+	</queryString>
+	<field name="DR_OZNAKA" class="java.lang.String"/>
+	<field name="NM_OZNAKA" class="java.lang.Integer"/>
+	<field name="NM_NAZIV" class="java.lang.String"/>
+	<field name="NM_PTT" class="java.lang.String"/>
+	<field name="DRZ_DR_OZNAKA" class="java.lang.String"/>
+	<field name="DU_OZNAKA" class="java.lang.String"/>
+	<field name="DR_NAZIV" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="79" backcolor="#FFCCCC" uuid="c2991968-ef9b-403c-9051-b35177d283c5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="SansSerif" size="42" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Naseljena mesta"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="41" width="200" height="20" backcolor="#FF9999" uuid="2497b4c4-ae56-4e75-98db-d5b9adc0bcd5"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<text><![CDATA[Naziv naseljenog mesta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="384" y="41" width="171" height="20" backcolor="#FF9999" uuid="69b58970-29e4-4dfb-ac8a-e4f5dc0eb33a"/>
+				<box leftPadding="3"/>
+				<text><![CDATA[Drzava ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="200" y="41" width="184" height="20" backcolor="#FF9999" uuid="9ec6b636-26c2-47b2-855f-29498227549e"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[PTT]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="200" height="20" uuid="91cc7d12-a59a-4762-bf7f-99a6d8958144"/>
+				<box leftPadding="3">
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{NM_NAZIV}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="384" y="0" width="171" height="20" uuid="50be8194-5acf-4391-8639-0d1f550ad50b"/>
+				<box leftPadding="3">
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{DR_NAZIV}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="184" height="20" uuid="3dedef0e-be01-4f22-bc13-db03af2f2104"/>
+				<box leftPadding="3">
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{NM_PTT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField pattern="dd.MM.yyyy.">
+				<reportElement x="455" y="34" width="100" height="20" uuid="5958a171-274b-4d22-ae21-af73543d7b9b"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="34" width="80" height="20" uuid="21f86d8d-435a-40c6-8f67-02e591503d10"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Stranica "+$V{PAGE_NUMBER}+" od"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="80" y="34" width="40" height="20" uuid="a656a91a-59a3-4198-b387-d97dab188661"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

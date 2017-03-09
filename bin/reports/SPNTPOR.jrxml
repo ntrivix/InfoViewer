@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Izvestaj_1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9b79b0ce-8d3a-4ed3-aa41-87ccfd14f92b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="DR_OZNAKA" class="java.lang.String">
+		<parameterDescription><![CDATA[Sifra države u kojoj se jedište organizacije]]></parameterDescription>
+		<defaultValueExpression><![CDATA["%"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[EXEC organizacije $P{DR_OZNAKA}]]>
+	</queryString>
+	<field name="DR_OZNAKA" class="java.lang.String"/>
+	<field name="ID_ORGANIZACIJE" class="java.lang.Integer"/>
+	<field name="NAS_DR_OZNAKA" class="java.lang.String"/>
+	<field name="NM_OZNAKA" class="java.lang.Integer"/>
+	<field name="NAZIV_ORGANIZACIJE" class="java.lang.String"/>
+	<field name="DATUM_OSNIVANJA" class="java.sql.Timestamp"/>
+	<field name="ADRESA" class="java.lang.String"/>
+	<field name="TELEFONSKI_BROJ" class="java.lang.String"/>
+	<field name="FAX" class="java.lang.String"/>
+	<field name="AKTIVNA" class="java.lang.Boolean"/>
+	<field name="DRZ_DR_OZNAKA" class="java.lang.String"/>
+	<field name="DU_OZNAKA" class="java.lang.String"/>
+	<field name="DR_NAZIV" class="java.lang.String"/>
+	<field name="NM_NAZIV" class="java.lang.String"/>
+	<field name="NM_PTT" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="45" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="555" height="45" uuid="50a1255e-1a9f-4209-942f-0750396e8584"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Organizacije"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="38" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="556" height="26" uuid="1b91252e-88b0-4b99-a3b0-89d854e6cb8e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($P{DR_OZNAKA}).equals("%")) ? "Pregled svih organizacija" : "Pregled svih organizacija za državu "+$F{DR_NAZIV}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="321" y="10" width="135" height="20" backcolor="#CDEDC8" uuid="596d2eb5-5a0a-42ed-be95-a08cec796dc1"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Adresa sedišta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="10" width="137" height="20" backcolor="#CDEDC8" uuid="1a744a38-a2ab-4887-a892-126d1f513b96"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Naziv organizacije]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="456" y="10" width="99" height="20" backcolor="#CDEDC8" uuid="723f2123-dbca-454c-ba26-f789563aae4e"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Država sedišta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="137" y="10" width="101" height="20" backcolor="#CDEDC8" uuid="3e8e4115-6c86-460d-b98f-a4f9bf683cff"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Datum osnivanja]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="238" y="10" width="83" height="20" backcolor="#CDEDC8" uuid="fa0426f8-fbd4-4b8e-b46d-d7f3e8c88571"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Grad sedišta]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="321" y="0" width="135" height="20" uuid="4987396a-7772-4ea3-b1c1-ebea6b263221"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ADRESA}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="137" height="20" uuid="afb7cae3-da71-4b13-9d2f-74daab34756e"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NAZIV_ORGANIZACIJE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="456" y="0" width="99" height="20" uuid="1fa21ed3-9b5b-424e-90b7-2034e8a7c12e"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{DR_NAZIV}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement x="137" y="0" width="101" height="20" uuid="4ae20f47-7faf-46bb-a638-947db021a257"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{DATUM_OSNIVANJA}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="238" y="0" width="83" height="20" uuid="4fa8433f-d1f8-4181-bcae-ea60c7da8e3e"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NM_NAZIV}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField pattern="dd.MM.yyyy HH:mm:ss">
+				<reportElement x="0" y="34" width="100" height="20" uuid="790c9ed2-dcbe-4cd2-8893-bf9d0917fda1"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="436" y="34" width="80" height="20" uuid="9347236b-9b89-41de-9b95-a418b2d55d5c"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="516" y="34" width="40" height="20" uuid="963526ad-f7fd-4cbd-abc5-61889f4a595b"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

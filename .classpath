@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="libraries/JDBC/" kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="src/theme/weblaf-complete-1.29.jar"/>
+	<classpathentry kind="lib" path="src/libraries/json-20160212.jar"/>
+	<classpathentry kind="lib" path="src/libraries/JDBC/sqljdbc4.jar"/>
+	<classpathentry kind="lib" path="src/libraries/JDBC/sqljdbc41.jar"/>
+	<classpathentry kind="lib" path="src/libraries/JDBC/sqljdbc42.jar"/>
+	<classpathentry kind="lib" path="src/libraries/iReport/commons-beanutils-1.8.2.jar"/>
+	<classpathentry kind="lib" path="src/libraries/iReport/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="src/libraries/iReport/commons-digester-2.1.jar"/>
+	<classpathentry kind="lib" path="src/libraries/iReport/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="src/libraries/iReport/iText-2.1.7.js2.jar"/>
+	<classpathentry kind="lib" path="src/libraries/iReport/jasperreports-5.6.0.jar"/>
+	<classpathentry kind="lib" path="src/libraries/iReport/jcommon-1.0.15.jar"/>
+	<classpathentry kind="lib" path="src/libraries/iReport/jfreechart-1.0.12.jar"/>
+	<classpathentry kind="lib" path="src/libraries/iReport/groovy-all-2.0.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
